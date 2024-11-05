@@ -1,0 +1,90 @@
+1. Create the CDs Table:
+
+CREATE TABLE CDs (
+    cd_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    artist TEXT NOT NULL,
+    genre TEXT,
+    release_year INTEGER,
+    price REAL NOT NULL
+);
+
+2.Create the Purchases Table:
+
+CREATE TABLE Purchases (
+    purchase_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    purchase_date DATE NOT NULL,
+    total_amount REAL NOT NULL
+);
+
+3.Create the Purchase_Items Table:
+
+CREATE TABLE Purchase_Items (
+    item_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    purchase_id INTEGER,
+    cd_id INTEGER,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY (purchase_id) REFERENCES Purchases(purchase_id),
+    FOREIGN KEY (cd_id) REFERENCES CDs(cd_id)
+);
+
+ 4.Insert Data into CDs Table:
+
+INSERT INTO CDs (title, artist, genre, release_year, price) VALUES 
+('Abbey Road', 'The Beatles', 'Rock', 1969, 19.99),
+('Back in Black', 'AC/DC', 'Rock', 1980, 17.99),
+('Thriller', 'Michael Jackson', 'Pop', 1982, 18.99),
+('The Dark Side of the Moon', 'Pink Floyd', 'Rock', 1973, 22.99),
+('Rumours', 'Fleetwood Mac', 'Rock', 1977, 16.99);
+
+
+5. Insert Data into Purchases Table:
+
+INSERT INTO Purchases (purchase_date, total_amount) VALUES 
+('2023-10-01', 55.97),
+('2023-10-02', 38.98),
+('2023-10-03', 22.99);
+
+6.Insert Data into Purchase_Items Table:
+INSERT INTO Purchase_Items (purchase_id, cd_id, quantity) VALUES 
+(1, 1, 2),  -- 2 copies of "Abbey Road"
+(1, 3, 1),  -- 1 copy of "Thriller"
+(2, 2, 2),  -- 2 copies of "Back in Black"
+(3, 4, 1);  -- 1 copy of "The Dark Side of the Moon"
+
+
+
+
+Sample Queries
+1. Retrieve All CDs:
+
+SELECT * FROM CDs;
+
+2. Total Sales Amount by Date:
+
+SELECT purchase_date, SUM(total_amount) AS total_sales
+FROM Purchases
+GROUP BY purchase_date;
+
+3. List Purchases with CD Details:
+
+SELECT p.purchase_id, p.purchase_date, c.title, c.artist, pi.quantity
+FROM Purchases p
+JOIN Purchase_Items pi ON p.purchase_id = pi.purchase_id
+JOIN CDs c ON pi.cd_id = c.cd_id;
+
+
+
+
+4.Get Total Quantity Sold for Each CD:
+
+SELECT c.title, SUM(pi.quantity) AS total_sold
+FROM CDs c
+JOIN Purchase_Items pi ON c.cd_id = pi.cd_id
+GROUP BY c.title;
+
+5. Find the Most Expensive CD:
+SELECT title, price
+FROM CDs
+ORDER BY price DESC
+LIMIT 1;
