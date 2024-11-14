@@ -2,15 +2,6 @@
 
 Murthy's CD Shop Management Software is a tool for managing the inventory and sales of a CD shop, similar to a super bazaar system. This software helps store owners efficiently track CD purchases, search for movie titles, and add new inventory in bulk using CSV or Excel files. Additionally, it generates profit and loss reports for better financial oversight.
 ![image](https://github.com/user-attachments/assets/3d48b528-093d-443d-9144-69bea7f8bfe9)
-## The login page
-The defult credentials are : 
-- username: admincan
-- password: p123
-
-The credentials can be changed as required 
-![image](https://github.com/user-attachments/assets/2d1f5a2e-9e74-4fff-952b-10ec210a2d6f)
-## The main menu
-![image](https://github.com/user-attachments/assets/37305c2d-42a6-44ba-9fb9-90d3d5a511a5)
 
 ## 📑 Table of Contents
 - [📋 Project Overview](#-project-overview)
@@ -25,6 +16,30 @@ The credentials can be changed as required
 
 ## 📋 Project Overview
 Murthy's CD Shop Management Software is designed to simplify the tasks of recording sales, managing inventory, and analyzing profits and losses for a CD shop. Built with PHP, HTML, CSS, and JavaScript, this software allows shop owners to focus on store operations by automating inventory and sales management.
+
+## The login page
+The defult credentials are : 
+- username: admincan
+- password: p123
+
+The credentials can be changed as required 
+![image](https://github.com/user-attachments/assets/2d1f5a2e-9e74-4fff-952b-10ec210a2d6f)
+## The main menu
+![image](https://github.com/user-attachments/assets/37305c2d-42a6-44ba-9fb9-90d3d5a511a5)
+
+## For viewing all the CDs in the database
+![image](https://github.com/user-attachments/assets/eff1c3ec-c98b-4206-b806-47c1e40ceff1)
+
+## For adding a single CD
+![image](https://github.com/user-attachments/assets/570b5e10-835d-4df1-abfb-520af45b1699)
+## Recording an purchase 
+![image](https://github.com/user-attachments/assets/b6d65128-bca6-4fb3-aa0d-ad7d4cdcb7eb)
+
+## Viewing all the purchases
+![image](https://github.com/user-attachments/assets/123d5ae7-5cb1-4e19-a14d-812567ce065c)
+
+## Bulk Upload of the CDs records
+![image](https://github.com/user-attachments/assets/b5ce0e5a-39d3-478d-9504-6c6f221510df)
 
 ## ✨ Features
 - **📝 Sales Recording**: Tracks each CD sale with customer and sales details.
